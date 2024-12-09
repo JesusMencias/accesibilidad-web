@@ -1,255 +1,46 @@
-<!DOCTYPE html>
-<html lang="es">
+# Página Web del Parque Natural
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formato de Texto, Listas y Navegación</title>
-    <style>
-        /* General */
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-        }
+Esta es una página web diseñada para brindar información sobre el Parque Natural, destacando sus rutas de senderismo, biodiversidad, y atractivos principales. La página permite a los visitantes obtener una experiencia virtual del parque, además de ofrecer datos útiles sobre su conservación y cómo disfrutarlo respetando su entorno natural.
 
-        /* Imagen alineada a la izquierda */
-        .img-izquierda {
-            float: left;
-            margin: 10px;
-            width: 200px;
-        }
+## Estructura del Proyecto
 
-        /* Imagen alineada a la derecha */
-        .img-derecha {
-            float: right;
-            margin: 10px;
-            width: 200px;
-        }
+- **index.html**: Archivo principal que contiene la estructura HTML de la página. Aquí se encuentran las secciones principales como la introducción, rutas de senderismo, galería de imágenes y el contacto.
+- **css/main.css**: Archivo CSS que define los estilos de la página, incluyendo el formato de texto, los colores y el posicionamiento de los elementos.
+- **img/**: Carpeta que contiene las imágenes utilizadas en la página, como fotografías del parque, mapas de rutas y otros elementos visuales.
+- **js/** (Opcional): Carpeta para scripts JavaScript, si es que se han implementado funcionalidades adicionales como menús interactivos o efectos visuales.
 
-        /* Imagen centrada */
-        .img-centrada {
-            display: block;
-            margin: 20px auto;
-            width: 300px;
-        }
+## Tecnologías Utilizadas
 
-        /* Tabla */
-        table {
-            width: 100%;
-            border-collapse: collapse;
-        }
+- **HTML5**: Define la estructura y el contenido de la página web.
+- **CSS3**: Utilizado para el diseño visual y la personalización de estilos, mejorando la apariencia y usabilidad de la página.
+- **JavaScript** (opcional): Puede ser usado para agregar funcionalidades interactivas, aunque no es obligatorio para esta versión.
+- **Herramientas de Desarrollo**:
+  - **Visual Studio Code**: Editor de código utilizado para escribir y organizar los archivos del proyecto.
+  - **Extensiones CSS Reset**: Para garantizar la consistencia de los estilos en todos los navegadores.
 
-        th,
-        td {
-            padding: 10px;
-            border: 1px solid #ccc;
-            text-align: left;
-        }
+## Estructura de la Página
 
-        th {
-            background-color: #f2f2f2;
-        }
+1. **Encabezado**: Contiene el título de la página y un menú de navegación para facilitar el acceso a las distintas secciones.
+2. **Introducción**: Breve descripción del parque, resaltando su importancia y biodiversidad.
+3. **Rutas de Senderismo**: Sección que muestra las rutas principales, con información sobre cada una y enlaces interactivos.
+4. **Galería de Imágenes**: Muestra fotografías de los paisajes y la fauna del parque, con alta calidad visual.
+5. **Información de Contacto**: Detalles sobre cómo llegar al parque, enlaces de redes sociales y recomendaciones para los visitantes.
 
-        /* Formulario */
-        form {
-            margin-top: 20px;
-        }
+## Instalación y Uso
 
-        input[type="text"],
-        input[type="email"],
-        textarea {
-            width: 100%;
-            padding: 8px;
-            margin: 5px 0;
-        }
+1. Descargar o clonar el repositorio.
+2. Abrir `index.html` en un navegador para ver la página en funcionamiento.
+3. Personalizar:
+   - Edita `index.html` para modificar el contenido textual o agregar nuevas secciones.
+   - Modifica `main.css` para cambiar los estilos o ajustar los colores y tipografías.
+   - Agrega nuevas imágenes en la carpeta `img` y enlázalas en el archivo HTML.
 
-        button {
-            padding: 10px 20px;
-            background-color: #4CAF50;
-            color: white;
-            border: none;
-            cursor: pointer;
-        }
+## Notas sobre Accesibilidad y Compatibilidad
 
-        button:hover {
-            background-color: #45a049;
-        }
+Se han implementado prácticas de accesibilidad, como atributos `aria-label` y `alt` en las imágenes, además de un alto contraste de colores para mejorar la visibilidad del contenido. La página ha sido probada en los navegadores principales (Chrome, Firefox y Edge) para asegurar su correcta visualización en cada uno.
 
-        /* Alto contraste */
-        .alto-contraste {
-            background-color: #000; /* Fondo negro */
-            color: #fff; /* Texto blanco */
-            padding: 20px;
-            margin-top: 20px;
-            border-radius: 8px;
-        }
+## Autor JESUS RAFAEL MENCIAS GIMENEZ
 
-        .alto-contraste h2 {
-            color: #FFD700; /* Amarillo dorado */
-        }
+Este proyecto ha sido desarrollado para familiarizarse con la creación de una página web básica y su personalización mediante HTML y CSS, siguiendo buenas prácticas de accesibilidad y compatibilidad.
 
-        /* Navegación */
-        nav ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        nav ul li {
-            display: inline;
-            margin-right: 15px;
-        }
-
-        nav ul li a {
-            text-decoration: none;
-            color: #007BFF;
-        }
-
-        nav ul li a:hover {
-            text-decoration: underline;
-        }
-
-        footer {
-            margin-top: 30px;
-            text-align: center;
-        }
-    </style>
-</head>
-
-<body>
-    <!-- Imagen alineada a la izquierda -->
-    <img src="img_intro.jpg" alt="Imagen introductoria de un parque natural" class="img-izquierda" aria-describedby="intro-description">
-    <p id="intro-description">Esta imagen muestra un parque natural al amanecer con un ambiente sereno.</p>
-
-    <!-- Navegación -->
-    <nav role="navigation" aria-label="Menú de navegación principal">
-        <ul>
-            <li><a href="#introduccion" aria-label="Ir a la sección de introducción">Introducción</a></li>
-            <li><a href="https://es.wikipedia.org/wiki/Biodiversidad" target="_blank" aria-label="Ir a la página sobre biodiversidad en Wikipedia">Elementos Naturales</a></li>
-            <li><a href="https://es.wikipedia.org/wiki/Flora_de_Venezuela" target="_blank" aria-label="Ir a la página sobre la flora de Venezuela en Wikipedia">Flora de Venezuela</a></li>
-            <li><a href="https://es.wikipedia.org/wiki/Fauna_de_Venezuela" target="_blank" aria-label="Ir a la página sobre la fauna de Venezuela en Wikipedia">Animales</a></li>
-            <li><a href="#formulario" aria-label="Ir al formulario de opinión">Formulario</a></li>
-        </ul>
-    </nav>
-
-    <!-- Audio de sonidos del parque -->
-    <section>
-        <h2>Audio de Ambiente</h2>
-        <audio src="sonidos_parque.mp3" controls aria-label="Reproductor de audio con sonidos del parque">
-            Tu navegador no soporta la etiqueta de audio.
-        </audio>
-    </section>
-
-    <!-- Video introductorio -->
-    <section>
-        <h2>Video Introductorio</h2>
-        <video src="parque.mp4" controls width="640" height="360" aria-label="Video sobre la biodiversidad del parque">
-            <track src="subtitulos.vtt" kind="subtitles" srclang="es" label="Español" default>
-            Tu navegador no soporta la etiqueta de video.
-        </video>
-    </section>
-
-    <!-- Imagen centrada en el medio de la página -->
-    <img src="img_centro.jpg" alt="Vista panorámica de un parque con biodiversidad" class="img-centrada" aria-describedby="panorama-description">
-    <p id="panorama-description">Vista panorámica de un parque mostrando la rica biodiversidad del lugar.</p>
-
-    <!-- Introducción -->
-    <section id="introduccion">
-        <h1>Explorando Formato de Texto, Listas y Navegación</h1>
-        <p><strong>Este documento</strong> demuestra cómo aplicar formato al texto, estructurar listas y añadir navegación en HTML.</p>
-    </section>
-
-    <!-- Elementos Naturales -->
-    <section id="elementos-naturales">
-        <h2>Elementos Naturales en un Parque</h2>
-        <p>En un parque podemos encontrar diversos elementos naturales, como:</p>
-        <ul>
-            <li>Árboles</li>
-            <li>Flores</li>
-            <li>Aves</li>
-            <li>Insectos</li>
-            <li>Arbustos</li>
-        </ul>
-
-        <!-- Imagen del parque con mapa interactivo -->
-        <img src="Parque.jpg" alt="Mapa interactivo del parque" usemap="#mapa_parque" width="600" aria-label="Imagen interactiva del parque con senderos">
-        <map name="mapa_parque">
-            <area shape="rect" coords="0,100,63,172" href="#ruta-lago" alt="Sendero del lago" aria-label="Sendero del lago">
-            <area shape="circle" coords="71,63,134,135" href="#ruta-montana" alt="Sendero de la montaña" aria-label="Sendero de la montaña">
-            <area shape="poly" coords="187,108,250,180" href="#ruta-bosque" alt="Sendero del bosque" aria-label="Sendero del bosque">
-        </map>
-    </section>
-
-    <!-- Imagen al final alineada a la derecha -->
-    <img src="img_final.jpg" alt="Atardecer en un parque natural" class="img-derecha" aria-describedby="final-image-description">
-    <p id="final-image-description">Atardecer sobre un parque natural mostrando la tranquilidad del lugar.</p>
-
-    <!-- Tabla de actividades -->
-    <section>
-        <h3>Actividades Destacadas del Parque</h3>
-        <table>
-            <thead>
-                <tr>
-                    <th>Actividad</th>
-                    <th>Horario</th>
-                    <th>Precio</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Tour Guiado</td>
-                    <td>10:00 AM - 12:00 PM</td>
-                    <td>10 €</td>
-                </tr>
-                <tr>
-                    <td>Paseo en Barco</td>
-                    <td>2:00 PM - 4:00 PM</td>
-                    <td>15 €</td>
-                </tr>
-                <tr>
-                    <td>Observación de Aves</td>
-                    <td>6:00 AM - 8:00 AM</td>
-                    <td>Gratis</td>
-                </tr>
-            </tbody>
-        </table>
-    </section>
-
-    <!-- Cita -->
-    <section>
-        <h3>Reflexión sobre la Naturaleza</h3>
-        <blockquote>
-            "La naturaleza no es un lugar que visitar. Es el hogar." - Gary Snyder
-        </blockquote>
-    </section>
-
-    <!-- Formulario -->
-    <section id="formulario">
-        <h2>Formulario de Opinión</h2>
-        <form action="#" method="post" aria-label="Formulario de opinión para usuarios">
-            <label for="nombre">Nombre:</label>
-            <input type="text" id="nombre" name="nombre" required aria-label="Campo de entrada para el nombre">
-            <br>
-            <label for="correo">Correo Electrónico:</label>
-            <input type="email" id="correo" name="correo" required aria-label="Campo de entrada para correo electrónico">
-            <br>
-            <label for="comentarios">Comentarios:</label>
-            <textarea id="comentarios" name="comentarios" rows="4" cols="50" required aria-label="Área de texto para comentarios"></textarea>
-            <br>
-            <button type="submit" aria-label="Botón para enviar el formulario">Enviar</button>
-        </form>
-    </section>
-
-    <!-- Sección de Alto Contraste -->
-    <section class="alto-contraste">
-        <h2>Información Importante</h2>
-        <p>Este texto está diseñado con un fondo de alto contraste para facilitar la lectura de personas con discapacidades visuales.</p>
-    </section>
-
-    <!-- Pie de página -->
-    <footer>
-        <p>&copy; 2024 Parque Natural. Todos los derechos reservados.</p>
-    </footer>
-</body>
-
-</html>
+Este README proporciona una descripción clara del proyecto y sirve como una referencia para cualquier usuario o desarrollador que desee entender o modificar la página sobre el parque natural.
