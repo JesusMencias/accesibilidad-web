@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formato de Texto, Listas y Navegación</title>
+    <style>
+        /* General */
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+        }
+
+        /* Imagen alineada a la izquierda */
+        .img-izquierda {
+            float: left;
+            margin: 10px;
+            width: 200px;
+        }
+
+        /* Imagen alineada a la derecha */
+        .img-derecha {
+            float: right;
+            margin: 10px;
+            width: 200px;
+        }
+
+        /* Imagen centrada */
+        .img-centrada {
+            display: block;
+            margin: 20px auto;
+            width: 300px;
+        }
+
+        /* Tabla */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th,
+        td {
+            padding: 10px;
+            border: 1px solid #ccc;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        /* Formulario */
+        form {
+            margin-top: 20px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        textarea {
+            width: 100%;
+            padding: 8px;
+            margin: 5px 0;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        /* Alto contraste */
+        .alto-contraste {
+            background-color: #000; /* Fondo negro */
+            color: #fff; /* Texto blanco */
+            padding: 20px;
+            margin-top: 20px;
+            border-radius: 8px;
+        }
+
+        .alto-contraste h2 {
+            color: #FFD700; /* Amarillo dorado */
+        }
+
+        /* Navegación */
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin-right: 15px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #007BFF;
+        }
+
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            margin-top: 30px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Imagen alineada a la izquierda -->
+    <img src="img_intro.jpg" alt="Imagen introductoria de un parque natural" class="img-izquierda" aria-describedby="intro-description">
+    <p id="intro-description">Esta imagen muestra un parque natural al amanecer con un ambiente sereno.</p>
+
+    <!-- Navegación -->
+    <nav role="navigation" aria-label="Menú de navegación principal">
+        <ul>
+            <li><a href="#introduccion" aria-label="Ir a la sección de introducción">Introducción</a></li>
+            <li><a href="https://es.wikipedia.org/wiki/Biodiversidad" target="_blank" aria-label="Ir a la página sobre biodiversidad en Wikipedia">Elementos Naturales</a></li>
+            <li><a href="https://es.wikipedia.org/wiki/Flora_de_Venezuela" target="_blank" aria-label="Ir a la página sobre la flora de Venezuela en Wikipedia">Flora de Venezuela</a></li>
+            <li><a href="https://es.wikipedia.org/wiki/Fauna_de_Venezuela" target="_blank" aria-label="Ir a la página sobre la fauna de Venezuela en Wikipedia">Animales</a></li>
+            <li><a href="#formulario" aria-label="Ir al formulario de opinión">Formulario</a></li>
+        </ul>
+    </nav>
+
+    <!-- Audio de sonidos del parque -->
+    <section>
+        <h2>Audio de Ambiente</h2>
+        <audio src="sonidos_parque.mp3" controls aria-label="Reproductor de audio con sonidos del parque">
+            Tu navegador no soporta la etiqueta de audio.
+        </audio>
+    </section>
+
+    <!-- Video introductorio -->
+    <section>
+        <h2>Video Introductorio</h2>
+        <video src="parque.mp4" controls width="640" height="360" aria-label="Video sobre la biodiversidad del parque">
+            <track src="subtitulos.vtt" kind="subtitles" srclang="es" label="Español" default>
+            Tu navegador no soporta la etiqueta de video.
+        </video>
+    </section>
+
+    <!-- Imagen centrada en el medio de la página -->
+    <img src="img_centro.jpg" alt="Vista panorámica de un parque con biodiversidad" class="img-centrada" aria-describedby="panorama-description">
+    <p id="panorama-description">Vista panorámica de un parque mostrando la rica biodiversidad del lugar.</p>
+
+    <!-- Introducción -->
+    <section id="introduccion">
+        <h1>Explorando Formato de Texto, Listas y Navegación</h1>
+        <p><strong>Este documento</strong> demuestra cómo aplicar formato al texto, estructurar listas y añadir navegación en HTML.</p>
+    </section>
+
+    <!-- Elementos Naturales -->
+    <section id="elementos-naturales">
+        <h2>Elementos Naturales en un Parque</h2>
+        <p>En un parque podemos encontrar diversos elementos naturales, como:</p>
+        <ul>
+            <li>Árboles</li>
+            <li>Flores</li>
+            <li>Aves</li>
+            <li>Insectos</li>
+            <li>Arbustos</li>
+        </ul>
+
+        <!-- Imagen del parque con mapa interactivo -->
+        <img src="Parque.jpg" alt="Mapa interactivo del parque" usemap="#mapa_parque" width="600" aria-label="Imagen interactiva del parque con senderos">
+        <map name="mapa_parque">
+            <area shape="rect" coords="0,100,63,172" href="#ruta-lago" alt="Sendero del lago" aria-label="Sendero del lago">
+            <area shape="circle" coords="71,63,134,135" href="#ruta-montana" alt="Sendero de la montaña" aria-label="Sendero de la montaña">
+            <area shape="poly" coords="187,108,250,180" href="#ruta-bosque" alt="Sendero del bosque" aria-label="Sendero del bosque">
+        </map>
+    </section>
+
+    <!-- Imagen al final alineada a la derecha -->
+    <img src="img_final.jpg" alt="Atardecer en un parque natural" class="img-derecha" aria-describedby="final-image-description">
+    <p id="final-image-description">Atardecer sobre un parque natural mostrando la tranquilidad del lugar.</p>
+
+    <!-- Tabla de actividades -->
+    <section>
+        <h3>Actividades Destacadas del Parque</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Actividad</th>
+                    <th>Horario</th>
+                    <th>Precio</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Tour Guiado</td>
+                    <td>10:00 AM - 12:00 PM</td>
+                    <td>10 €</td>
+                </tr>
+                <tr>
+                    <td>Paseo en Barco</td>
+                    <td>2:00 PM - 4:00 PM</td>
+                    <td>15 €</td>
+                </tr>
+                <tr>
+                    <td>Observación de Aves</td>
+                    <td>6:00 AM - 8:00 AM</td>
+                    <td>Gratis</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <!-- Cita -->
+    <section>
+        <h3>Reflexión sobre la Naturaleza</h3>
+        <blockquote>
+            "La naturaleza no es un lugar que visitar. Es el hogar." - Gary Snyder
+        </blockquote>
+    </section>
+
+    <!-- Formulario -->
+    <section id="formulario">
+        <h2>Formulario de Opinión</h2>
+        <form action="#" method="post" aria-label="Formulario de opinión para usuarios">
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" required aria-label="Campo de entrada para el nombre">
+            <br>
+            <label for="correo">Correo Electrónico:</label>
+            <input type="email" id="correo" name="correo" required aria-label="Campo de entrada para correo electrónico">
+            <br>
+            <label for="comentarios">Comentarios:</label>
+            <textarea id="comentarios" name="comentarios" rows="4" cols="50" required aria-label="Área de texto para comentarios"></textarea>
+            <br>
+            <button type="submit" aria-label="Botón para enviar el formulario">Enviar</button>
+        </form>
+    </section>
+
+    <!-- Sección de Alto Contraste -->
+    <section class="alto-contraste">
+        <h2>Información Importante</h2>
+        <p>Este texto está diseñado con un fondo de alto contraste para facilitar la lectura de personas con discapacidades visuales.</p>
+    </section>
+
+    <!-- Pie de página -->
+    <footer>
+        <p>&copy; 2024 Parque Natural. Todos los derechos reservados.</p>
+    </footer>
+</body>
+
+</html>
